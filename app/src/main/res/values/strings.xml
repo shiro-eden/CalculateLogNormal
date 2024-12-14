@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">CalculateLogNormal</string>
+Ed    <string name="hint_mean_val">Введите значение μ</string>
+    <string name="hint_variance_value">Введите значение σ²</string>
+    <string name="btn_calculate">Посчитать</string>
+    <string name="label_result">Тут будет результат</string>
 </resources>
