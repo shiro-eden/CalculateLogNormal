@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
                 val res = LogNormalDistribution(mu, sigma).sample()
 
                 result.text = res.toString()
-            } catch (e: InvalidParameterException) {
+            } catch (e: Exception) {
                 result.text = e.message
                 return@setOnClickListener
             }
@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun checkEmpty(muString: String, sigmaString: String) {
         if (muString.isEmpty() || sigmaString.isEmpty())
-            throw InvalidParameterException(getString(R.string.error_empty_fields))
+            throw Exception(getString(R.string.error_empty_fields))
     }
 
     private fun validateParameters(muString: String, sigmaString: String): Pair<Double, Double> {
@@ -58,8 +58,8 @@ class MainActivity : AppCompatActivity() {
         val mu = muString.toDoubleOrNull()
         val sigma = sigmaString.toDoubleOrNull()
         when {
-            mu == null || sigma == null -> throw InvalidParameterException(getString(R.string.error_double_max_or_min))
-            sigma == 0.0 -> throw InvalidParameterException(getString(R.string.error_sigma_equal_zero))
+            mu == null || sigma == null -> throw Exception(getString(R.string.error_double_max_or_min))
+            sigma == 0.0 -> throw Exception(getString(R.string.error_sigma_equal_zero))
         }
         return Pair(mu!!, sigma!!)
     }
