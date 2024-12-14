@@ -1,7 +1,10 @@
 <resources>
     <string name="app_name">CalculateLogNormal</string>
-Ed    <string name="hint_mean_val">Введите значение μ</string>
+    <string name="hint_mean_val">Введите значение μ</string>
     <string name="hint_variance_value">Введите значение σ²</string>
     <string name="btn_calculate">Посчитать</string>
     <string name="label_result">Тут будет результат</string>
+    <string name="error_double_max_or_min">Введенные значения в полях слишком маленькие/большие</string>
+    <string name="error_sigma_equal_zero">Параметр σ²>0</string>
+    <string name="error_empty_fields">Заполните все поля</string>
 </resources>
