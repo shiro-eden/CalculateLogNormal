@@ -10,27 +10,38 @@
         android:id="@+id/random_number_result"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:text="@string/label_result"/>
+        android:text="@string/label_result"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="20sp"/>
 
     <EditText
         android:id="@+id/mean_val"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal|numberSigned"
-        android:hint="@string/hint_mean_val"/>
+        android:hint="@string/hint_mean_val"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:textSize="20sp"/>
 
     <EditText
         android:id="@+id/variance_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="numberDecimal"
-        android:hint="@string/hint_variance_value"/>
+        android:hint="@string/hint_variance_value"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:textSize="20sp"/>
 
     <Button
         android:id="@+id/get_random_num"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:text="@string/btn_calculate"
-        />
+        android:textSize="20sp"/>
 
 </LinearLayout>
