@@ -52,4 +52,5 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation(libs.commons.math3)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
 }
