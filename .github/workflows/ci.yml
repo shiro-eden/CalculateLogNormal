@@ -22,33 +22,6 @@ jobs:
         run: |
           ./gradlew test
 
-  detekt:
-    name: Detekt
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Set up our JDK environment
-        uses: actions/setup-java@v2
-        with:
-          distribution: 'adopt'
-          java-version: '17'
-
-      - name: Cache Gradle and wrapper
-        uses: actions/cache@v2
-        with:
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
-          restore-keys: |
-            ${{ runner.os }}-gradle-
-
-      - name: Run detekt Linter
-        run: ./gradlew detekt
-
-
   build:
     name: Build
     runs-on: ubuntu-20.04
@@ -70,3 +43,13 @@ jobs:
         with:
           name: app-debug.aab
           path: app/build/outputs/bundle/debug/app-debug.aab
+
+  detekt:
+    name: Detekt
+    runs-on: ubuntu-20.04
+    steps:
+      - name: "checkout"
+        uses: actions/checkout@v2
+      - name: "detekt"
+        uses: natiginfo/action-detekt-all@1.17.0
+
