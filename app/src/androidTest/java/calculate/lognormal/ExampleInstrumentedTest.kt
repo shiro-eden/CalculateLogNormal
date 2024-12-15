@@ -132,7 +132,7 @@ internal class InstrumentedTest {
             meanView.typeText("$mean")
             varianceView.typeText("$variance")
             for (i in 0..limit) {
-                assertEquals(i, i) // чтобы detekt не жаловался на unused i
+//                assertEquals(i, i) // чтобы detekt не жаловался на unused i
                 getNum.click()
                 Thread.sleep(THREAD_DELAY)
                 resultNum.assert {
@@ -219,7 +219,7 @@ internal class DoubleComparison(
 ) :
     ViewAssertion {
     override fun check(view: View?, noViewFoundException: NoMatchingViewException?) {
-        assertEquals(std, std) // чтобы detekt не жаловался на unused std, mean
+//        assertEquals(std, std) // чтобы detekt не жаловался на unused std, mean
         assertEquals(mean, mean)
         if (noViewFoundException != null) throw noViewFoundException
         assertTrue(view is TextView)
