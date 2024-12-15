@@ -47,10 +47,15 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.junit.ktx)
+    implementation(libs.androidx.runner)
+    implementation(libs.core.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
     implementation(libs.commons.math3)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    androidTestImplementation(libs.kakao)
+    androidTestImplementation(libs.hamcrest)
 }

@@ -12,7 +12,7 @@ class MainViewModel: ViewModel() {
     fun calcLogNormal(muString: String, sigmaString: String) {
         try {
             val (mu, sigma) = Utils.validateParameters(muString, sigmaString)
-            val res = Utils.logNormalNotInfinity(mu, sigma)
+            val res = Utils.logNormalDistribution(mu, sigma)
             resultField.postValue(res.toString())
         } catch (e: InvalidParameterException) {
             resultField.postValue(e.message)

@@ -14,13 +14,13 @@
         android:layout_gravity="center"
         android:layout_marginTop="60dp"
         android:layout_marginBottom="20dp"
-        android:textSize="20sp"/>
+        android:textSize="20sp"
+        />
 
     <EditText
         android:id="@+id/mean_val"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:maxLength="10"
         android:inputType="numberDecimal|numberSigned"
         android:hint="@string/hint_mean_val"
         android:layout_gravity="center"
@@ -31,7 +31,6 @@
         android:id="@+id/variance_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:maxLength="10"
         android:inputType="numberDecimal"
         android:hint="@string/hint_variance_value"
         android:layout_gravity="center"

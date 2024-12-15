@@ -21,10 +21,7 @@ object Utils {
         return Pair(mu!!, sigma!!)
     }
 
-    fun logNormalNotInfinity(mu: Double, sigma: Double): Double {
-        val result = LogNormalDistribution(mu, sigma).sample()
-        if (result == Double.POSITIVE_INFINITY)
-            throw InvalidParameterException("Число слишком большое")
-        return result
+    fun logNormalDistribution(mu: Double, sigma: Double): Double {
+        return LogNormalDistribution(mu, sigma).sample()
     }
 }
