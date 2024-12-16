@@ -11,25 +11,25 @@ on:
       - 'develop'
 
 jobs:
-#  detekt:
-#    name: Detekt
-#    runs-on: ubuntu-20.04
-#    steps:
-#      - name: "checkout"
-#        uses: actions/checkout@v2
-#      - name: "detekt"
-#        uses: natiginfo/action-detekt-all@1.23.7
-#
-#  test:
-#    name: Test
-#    runs-on: ubuntu-20.04
-#    steps:
-#      - uses: actions/checkout@v2
-#      - uses: actions/setup-java@v1
-#        with: { java-version: 1.17 }
-#      - name: Run tests
-#        run: |
-#          ./gradlew test
+  detekt:
+    name: Detekt
+    runs-on: ubuntu-20.04
+    steps:
+      - name: "checkout"
+        uses: actions/checkout@v2
+      - name: "detekt"
+        uses: natiginfo/action-detekt-all@1.23.7
+
+  test:
+    name: Test
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v1
+        with: { java-version: 1.17 }
+      - name: Run tests
+        run: |
+          ./gradlew test
 
   connected-tests:
     runs-on: ubuntu-20.04
@@ -59,24 +59,24 @@ jobs:
           disable-animations: true
           script: ./gradlew cAT
 
-#  build:
-#    name: Build
-#    runs-on: ubuntu-20.04
-#    steps:
-#      - uses: actions/checkout@v2
-#      - uses: actions/setup-java@v1
-#        with: {java-version: 1.17}
-#      - name: Build release APK and AAB after test
-#        run: |
-#          ./gradlew assembleDebug
-#          ./gradlew bundleDebug
-#      - name: Upload APK
-#        uses: actions/upload-artifact@v4
-#        with:
-#          name: app-debug.apk
-#          path: app/build/outputs/apk/debug/app-debug.apk
-#      - name: Upload AAB Bundle
-#        uses: actions/upload-artifact@v4
-#        with:
-#          name: app-debug.aab
-#          path: app/build/outputs/bundle/debug/app-debug.aab
+  build:
+    name: Build
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-java@v1
+        with: {java-version: 1.17}
+      - name: Build release APK and AAB after test
+        run: |
+          ./gradlew assembleDebug
+          ./gradlew bundleDebug
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-debug.apk
+          path: app/build/outputs/apk/debug/app-debug.apk
+      - name: Upload AAB Bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-debug.aab
+          path: app/build/outputs/bundle/debug/app-debug.aab
