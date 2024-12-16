@@ -48,10 +48,10 @@ jobs:
       - name: Run cAT
         uses: ReactiveCircus/android-emulator-runner@v2
         with:
-          api-level: 30
-          target: google_apis
+          api-level: 35
           arch: x86_64
-          script: ./gradlew cAT
+          disable-animations: true
+          script: ./gradlew connectedCheck
 
 #  build:
 #    name: Build
